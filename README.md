@@ -11,14 +11,10 @@ Supported simulation engines:
 
 If you want to know more about how the headless simulations work you can click [here](https://github.com/dmonsch/PCM-Headless/wiki/How-it-works).
 
-# Setup
-In general, there are two different ways to use the headless implementation. The first and simpler method is the use of the prepared Docker Image in combination with the offered REST interface. The second possibility is the direct use of the Gradle projects and the source code.
+# Setup with Docker
 
-1. [Setup using Docker](https://github.com/dmonsch/PCM-Headless/wiki/Setup-using-Docker)
-2. [Setup using Gradle](https://github.com/dmonsch/PCM-Headless/wiki/Setup-using-Gradle-project)
-
-Or the easy way, just use Docker and execute: `docker run --name pcm-docker -p 8080:8080 davmonsch/pcm-headless-rest`<br>
-After that you are ready to go.
+1. Run `docker buildx --network=host build -t cipm-pcm-headless:0.x .` in the repository. Please note that you can select a different tag. In this case, adjust the following command to use the different tag.
+2. Run `docker container --net=host run cipm-pcm-headless:0.x`. Then, you can access the web frontend on `http://localhost:8080`.
 
 # Usage
 The usage is very intuitive and in general looks like this:
