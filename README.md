@@ -13,7 +13,7 @@ If you want to know more about how the headless simulations work you can click [
 
 # Setup with Docker
 
-1. Run `docker buildx --network=host build -t cipm-pcm-headless:0.x .` in the repository. Please note that you can select a different tag. In this case, adjust the following command to use the different tag.
+1. Run `docker buildx build --network=host -t cipm-pcm-headless:0.x .` in the repository. Please note that you can select a different tag. In this case, adjust the following command to use the different tag.
 2. Run `docker container --net=host run cipm-pcm-headless:0.x`. Then, you can access the web frontend on `http://localhost:8080`.
 
 # Usage
